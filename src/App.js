@@ -16,7 +16,7 @@ function App() {
 				<Route path='/products'>
 					<Products />
 				</Route>
-				<Route path='/product-detail/:productId'>
+				<Route path='/products/:productId'>
 					<ProductDetail />
 				</Route>
 			</main>
@@ -24,7 +24,9 @@ function App() {
 	);
 }
 
-// 'my-domain.com/product-detail/<any value>' will display the <ProductDetail> component
-// (no matter what the <any value> is)
+// In this example, 'my-domain.com/products/p1' "matches" the path for the <Products /> component and the <ProductDetail /> component
+// Because in the 'react-router' world, 'matches' means that the path starts with the path defined in the <Route> component
+// So 'my-domain.com/products/p1' will display both <Products />, and then <ProductDetail /> below it
+// In some instances you may want this, and this is a good way to achieve it
 
 export default App;

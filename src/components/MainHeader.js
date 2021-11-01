@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import classes from './MainHeader.module.css';
 
@@ -8,10 +8,14 @@ const MainHeader = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to='/welcome'>Welcome</Link>
+						<NavLink activeClassName={classes.active} to='/welcome'>
+							Welcome
+						</NavLink>
 					</li>
 					<li>
-						<Link to='/products'>Products</Link>
+						<NavLink activeClassName={classes.active} to='/products'>
+							Products
+						</NavLink>
 					</li>
 				</ul>
 			</nav>
@@ -19,8 +23,6 @@ const MainHeader = () => {
 	);
 };
 
-// We use '<Link to='/welcome'>Welcome</Link>' instead of '<a href='/welcome'>Welcome</a>' because using the anchor tag will reload the page
-// The 'Link' component will prevent the default browser behaviour, manually update the URL for us, and change what we see on the screen
-// However, unlike '<a>' it does NOT send another http request and reload the page
+// 'NavLink' does the same as 'Link', but it also sets a css class, on the active anchor item, with the 'activeClassName' prop
 
 export default MainHeader;
